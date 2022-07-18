@@ -74,7 +74,20 @@
 </div>
 <script src="https://unpkg.com/jquery"></script>
 <script>
-  // Add your code here!
+  // Step 1:
+  $("img").attr("class", "image-center");
+
+  // Step 2:
+  let numParagraphs = $("p").length;
+  $("p").eq(numParagraphs-1).remove();
+
+  // Step 3:
+  let $title = $("h1");
+  $title.css("font-size", Math.round(Math.random()*100));
+
+  // Step 4:
+  let $list = $("ol");
+  $list.append("<li>cats are cute</li>");
 </script>
 </body>
 
