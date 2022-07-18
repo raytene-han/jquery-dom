@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet"
+        href="https://unpkg.com/bootstrap@5/dist/css/bootstrap.css">
+
+</head>
+
+<body>
+<h1>Movies App</h1>
+  <div class="form">
+    <div>
+      Title
+      <input id="movie-title" type="text">
+    </div>
+    <div>
+      Rating
+      <input id="movie-rating" type="text">
+    </div>
+    <button id="submit-button">Submit Rating</button>
+  </div>
+
+  <div class="movies-area">
+
+
+  </div>
+
+<script src="https://unpkg.com/jquery"></script>
+<script>
+
+  let movies = [];
+
+  function handleSubmit() {
+    console.log('handleSubmit');
+    let $title = $("#movie-title");
+    let $rating = $("#movie-rating");
+
+    addMovie($title.val(), $rating.val());
+    $title.val('');
+    $rating.val('');
+  }
+
+  function addMovie(title, rating) {
+    $(".movies-area").append(`<div id="${title}">${title} ${rating}</div>`)
+  }
+
+  function deleteMovie() {
+
+  }
+
+  $("#submit-button").on("click", handleSubmit);
+</script>
+</body>
+
+</html>
