@@ -43,13 +43,16 @@
   }
 
   function addMovie(title, rating) {
-    $(".movies-area").append(`<div id="${title}">${title} ${rating}</div>`)
+    $(".movies-area").append(`<div class= "movies" id="${title}">${title} ${rating}</div>`);
+    // debugger
+    $(`#${title}`).append("<button class = 'delete'> delete </button>");
   }
 
-  function deleteMovie() {
-
+  function deleteMovie(evt) {
+    $(evt.target).parent().remove();
   }
 
+  $(".movies-area").on("click", ".delete", deleteMovie);
   $("#submit-button").on("click", handleSubmit);
 </script>
 </body>
