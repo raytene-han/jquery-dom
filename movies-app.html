@@ -17,7 +17,7 @@
     </div>
     <div>
       Rating
-      <input id="movie-rating" type="text">
+      <input id="movie-rating" type="number" min="0" max="10">
     </div>
     <button id="submit-button">Submit Rating</button>
   </div>
@@ -30,10 +30,8 @@
 <script src="https://unpkg.com/jquery"></script>
 <script>
 
-  let movies = [];
-
+/** doc strings*/
   function handleSubmit() {
-    console.log('handleSubmit');
     let $title = $("#movie-title");
     let $rating = $("#movie-rating");
 
@@ -44,7 +42,6 @@
 
   function addMovie(title, rating) {
     $(".movies-area").append(`<div class= "movies" id="${title}">${title} ${rating}</div>`);
-    // debugger
     $(`#${title}`).append("<button class = 'delete'> delete </button>");
   }
 

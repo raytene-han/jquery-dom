@@ -85,10 +85,12 @@
 
     // Step 4:
     let $list = $("ol");
-    $list.append("<li>cats are cute</li>");
+    //use $("<li>") then second argument to set
+
+    $list.append($("<li>", {text: "cats are cute"}));
 
     // Step 5:
-    $("aside").empty().append("<p> sorry for the list</p>");
+    $("aside").empty().append($("<p>", {text: "sorry for the list"}));
 
     // Step 6:
     $(".mb-5").on("change", () => {
@@ -101,6 +103,7 @@
 
     // Step 7:
     $("article").on("click", "img", () => {$("img").remove()});
+    //use evt target
 
   </script>
 </body>
